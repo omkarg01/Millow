@@ -68,11 +68,19 @@ describe('Escrow', () => {
             expect(result).to.equal(true)
         })
 
+        it('Returns buyer', async () => {
+            const result = await escrow.buyer(1)
+            expect(result).to.be.equal(buyer.address)
+        })
+
+        
+
         it("Update ownership", async () => {
             const result = await realEstate.ownerOf(1)
             expect(result).to.equal(escrow.address)
         })
+
     })
 
-    
+
 })
